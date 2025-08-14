@@ -225,6 +225,46 @@ pnpm test
 # Os relatórios estarão disponíveis em ./coverage/
 ```
 
+## 🔄 Pull Requests e Testes Automáticos
+
+Este projeto utiliza GitHub Actions para executar testes automaticamente em todos os Pull Requests direcionados para a branch `main`.
+
+### Como funciona
+
+- **Automaticamente**: quando um PR é aberto para `main`, os testes rodam no GitHub
+- **Banco de dados**: um PostgreSQL temporário é criado no runner para os testes
+- **Dependências**: pnpm instala as dependências e executa `pnpm test`
+- **Status**: o PR só pode ser mergeado se os testes passarem
+
+### Workflow de desenvolvimento
+
+1. **Crie uma branch** para sua feature:
+   ```bash
+   git checkout -b feature/nova-funcionalidade
+   ```
+
+2. **Desenvolva e teste localmente**:
+   ```bash
+   pnpm test  # Execute os testes antes de commitar
+   ```
+
+3. **Commit e push**:
+   ```bash
+   git add .
+   git commit -m "feat: nova funcionalidade"
+   git push origin feature/nova-funcionalidade
+   ```
+
+4. **Abra um Pull Request** para `main`
+5. **Aguarde os testes** rodarem automaticamente
+6. **Merge** quando os testes passarem ✅
+
+### Verificando o status
+
+- **GitHub → Actions**: acompanhe a execução dos workflows
+- **PR → Checks**: veja o status dos testes diretamente no PR
+- **Logs**: clique nos detalhes para ver o que aconteceu
+
 ## ✅ Husky (pre-commit)
 
 Este projeto utiliza o Husky para garantir qualidade antes de cada commit.
