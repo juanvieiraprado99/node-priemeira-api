@@ -225,6 +225,36 @@ pnpm test
 # Os relatórios estarão disponíveis em ./coverage/
 ```
 
+## ✅ Husky (pre-commit)
+
+Este projeto utiliza o Husky para garantir qualidade antes de cada commit.
+
+- **O que acontece no pre-commit**: automaticamente é executado `pnpm test`.
+- **Se os testes passarem**: o commit prossegue normalmente.
+- **Se os testes falharem**: o commit é bloqueado até que os problemas sejam corrigidos.
+
+### Pré-requisitos para o hook funcionar
+
+- Tenha as dependências instaladas: `pnpm install`.
+- Garanta que o banco esteja em execução: `docker-compose up -d`.
+- Variáveis de ambiente de teste: os comandos de teste usam `dotenv -e .env.test`. Se você tiver um arquivo `.env.test`, ele será carregado. Caso contrário, serão usados valores do ambiente atual.
+
+### Dicas úteis
+
+- Execute os testes localmente antes de commitar:
+
+```bash
+pnpm test
+```
+
+- Em situações excepcionais (por exemplo, WIP), é possível pular o hook:
+
+```bash
+git commit -m "wip: algo" --no-verify
+```
+
+Use `--no-verify` com cautela, apenas quando realmente necessário.
+
 ## 🔧 Configurações
 
 ### Desenvolvimento
