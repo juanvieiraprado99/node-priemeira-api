@@ -1,0 +1,15 @@
+GET http://localhost:3333/courses
+
+###
+
+@courseId = 373b188d-26c2-4552-aac7-cd4aa70832b5
+GET http://localhost:3333/courses/{{courseId}}
+
+###
+
+POST http://localhost:3333/courses
+Content-Type: application/json
+
+{
+    "title": "Curso de Angular"
+}
