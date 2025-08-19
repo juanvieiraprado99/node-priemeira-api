@@ -10,9 +10,23 @@ import {
 import { createCourseRoute } from "./routes/create-course.ts";
 import { getCourseByIdRoute } from "./routes/get-course-by-id.ts";
 import { getCoursesRoute } from "./routes/get-courses.ts";
+import { loginRoute } from "./routes/login.ts";
 
 const server = fastify({
   logger: {
+    level: "info",
+    serializers: {
+      req(req) {
+        return {
+          method: req.method,
+          url: req.url,
+          headers: req.headers,
+          hostname: req.hostname,
+          remoteAddress: req.ip,
+          remotePort: req.socket.remotePort,
+        };
+      },
+    },
     transport: {
       target: "pino-pretty",
       options: {
@@ -45,5 +59,7 @@ server.setSerializerCompiler(serializerCompiler);
 server.register(createCourseRoute);
 server.register(getCourseByIdRoute);
 server.register(getCoursesRoute);
+
+server.register(loginRoute);
 
 export { server };

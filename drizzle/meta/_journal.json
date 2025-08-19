@@ -36,6 +36,13 @@
       "when": 1755125867501,
       "tag": "0004_lyrical_groot",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1755274696675,
+      "tag": "0005_complete_major_mapleleaf",
+      "breakpoints": true
     }
   ]
 }

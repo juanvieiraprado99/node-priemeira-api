@@ -2,14 +2,25 @@ GET http://localhost:3333/courses
 
 ###
 
-@courseId = 373b188d-26c2-4552-aac7-cd4aa70832b5
+@courseId = e8b1b21b-9f83-46bc-82de-b4be9d832955
 GET http://localhost:3333/courses/{{courseId}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZTJmZWU2My00MGIzLTQ0MDMtOGZlMi05NmRkNDNmM2YxYzYiLCJyb2xlIjoic3R1ZGFudCIsImlhdCI6MTc1NTM1MDA3M30.CaCwEfwEg4Dgyezb9cR00dyK3qrLUSDN_mgtf128W_o
 
 ###
 
 POST http://localhost:3333/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZTJmZWU2My00MGIzLTQ0MDMtOGZlMi05NmRkNDNmM2YxYzYiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NTYxMjc4NCwiZXhwIjoxNzU1NjIzNTg0fQ.3iT5uHxL21EgrtBKjNZTO4aIxZI0JlB1ZwHMlO_ij48
 
 {
-    "title": "Curso de Angular"
+    "title": "Curso de Angular manager criando"
+}
+
+###
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+    "email": "AnaJulia45@live.com",
+    "password": "123456"
 }
