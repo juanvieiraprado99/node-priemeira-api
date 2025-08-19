@@ -24,17 +24,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Create .env.test
         run: |
@@ -48,4 +45,4 @@ jobs:
             'NODE_ENV="test"' > .env.test
 
       - name: Run tests
-        run: pnpm test
+        run: npm test
