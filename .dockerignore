@@ -9,3 +9,5 @@ README.md
 setup.ps1
 setup.sh
 .github
+.dockerignore
+fly.toml
