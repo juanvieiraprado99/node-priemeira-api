@@ -13,7 +13,7 @@ fi
 
 # Instalar dependências
 echo "📦 Instalando dependências..."
-pnpm install
+npm run install
 
 # Verificar se o Docker está rodando
 if ! docker info > /dev/null 2>&1; then
@@ -31,15 +31,15 @@ sleep 5
 
 # Executar migrações
 echo "🗄️  Executando migrações..."
-pnpm db:migrate
+npm run db:migrate
 
 echo "🎉 Configuração concluída!"
 echo ""
 echo "Para iniciar o servidor, execute:"
-echo "  pnpm dev"
+echo "  npm run dev"
 echo ""
 echo "Para ver a documentação da API:"
 echo "  http://localhost:3333/docs"
 echo ""
 echo "Para executar os testes:"
-echo "  pnpm test"
+echo "  npm run test"

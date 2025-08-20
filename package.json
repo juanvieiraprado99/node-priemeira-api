@@ -6,7 +6,7 @@
   "author": "Juan Vieira Prado",
   "type": "module",
   "main": "server.ts",
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "npm@10.9.0",
   "keywords": [],
   "scripts": {
     "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
