@@ -1,6 +1,13 @@
-/.git
-/node_modules
+node_modules
+.git
+.env*
+coverage
+vitest.config.ts
+requests.rest
+README.md
+.husky
+setup.ps1
+setup.sh
+.github
 .dockerignore
-.env
-Dockerfile
 fly.toml
