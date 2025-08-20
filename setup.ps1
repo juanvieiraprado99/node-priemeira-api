@@ -30,7 +30,7 @@ NODE_ENV=development
 
 # Instalar dependências
 Write-Host "📦 Instalando dependências..." -ForegroundColor Blue
-pnpm install
+npm run install
 
 # Verificar se o Docker está rodando
 try {
@@ -51,15 +51,15 @@ Start-Sleep -Seconds 5
 
 # Executar migrações
 Write-Host "🗄️  Executando migrações..." -ForegroundColor Blue
-pnpm db:migrate
+npm run db:migrate
 
 Write-Host "🎉 Configuração concluída!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Para iniciar o servidor, execute:" -ForegroundColor Cyan
-Write-Host "  pnpm dev" -ForegroundColor White
+Write-Host "  npm run dev" -ForegroundColor White
 Write-Host ""
 Write-Host "Para ver a documentação da API:" -ForegroundColor Cyan
 Write-Host "  http://localhost:3333/docs" -ForegroundColor White
 Write-Host ""
 Write-Host "Para executar os testes:" -ForegroundColor Cyan
-Write-Host "  pnpm test" -ForegroundColor White
+Write-Host "  npm run test" -ForegroundColor White
